@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+h1,
+h2,
+p,
+label,
+a {
+  user-select: none;
+  font-family: 'Caveat', cursive;
+}
+
+.hide {
+  transition: 1s ease;
+  opacity: 0.3;
+}
+.show {
+  transition: 1s ease;
+  opacity: 0.8;
+}
+
+.activeImg {
+  color: #686868;
+}
+.red {
+  color: red;
+}
+
+nav {
+  display: flex;
+  padding: 5px 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 3px solid black;
+  .logo {
+    display: flex;
+    gap: 30px;
+    a {
+      color: black;
+      text-decoration: none;
+      h1 {
+        font-size: 4em;
+      }
+      h1:hover {
+        transform: scale(1.1);
+      }
+    }
+    img {
+      height: 100px;
+      width: auto;
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    li {
+      a {
+        text-decoration: none;
+        color: black;
+        margin: 20px;
+        font-size: 3.5em;
+      }
+
+      .active {
+        color: #b42e2e;
+      }
+    }
+    :hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  border-top: 3px solid black;
+  background: radial-gradient(
+    circle,
+    rgba(16, 0, 117, 0.5) 38%,
+    rgba(0, 43, 1, 0.5) 92%
+  );
+  ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    li {
+      height: 32px;
+      img {
+        width: 32px;
+        height: auto;
+      }
+    }
+    :hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.home_wrap {
+  padding: 20px;
+  position: relative;
+  border-bottom: black solid 3px;
+}
+
+.home_wrap::after {
+  position: absolute;
+  content: '';
+  overflow: hidden;
+  background-image: url('https://cdn.pixabay.com/photo/2018/07/18/08/18/cosmea-3545820_960_720.jpg');
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.home_wrap-description {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20%;
+
+  h1 {
+    font-size: 4em;
+  }
+  p {
+    font-size: 1.5em;
+  }
+}
+
+.home_slider {
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  .home_img {
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+}
+.buttons {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 0 25px;
+  button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: grid;
+    border: black 3px solid;
+    img {
+      width: 60%;
+      z-index: 1;
+      margin: auto;
+    }
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  button:focus {
+    outline: none;
+  }
+}
+.currentImg {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  bottom: -80px;
+  justify-content: center;
+  list-style: none;
+  li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-text-stroke: 3px black;
+    font-size: 13em;
+    cursor: pointer;
+  }
+}
+
+.flowers {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 3px solid black;
+    div {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+    * {
+      margin: 10px;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 3em;
+    }
+  }
+
+  label {
+    font-size: 2em;
+    input {
+      font-family: 'Caveat', cursive;
+      font-size: 0.8em;
+      padding: 5px;
+      border-radius: 20px;
+    }
+    input:focus {
+      outline: none;
+    }
+  }
+  button {
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    font-size: 2em;
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 1s ease;
+  }
+  button:focus {
+    outline: none;
+  }
+  button:active {
+    background-color: #00000050;
+    outline: none;
+    transform: scale(1.3);
+    transition: transform 0s ease;
+  }
+}
+
+.flower_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  text-align: center;
+  padding: 20px;
+  gap: 20px;
+  width: 100%;
+  li {
+    min-height: 300px;
+    min-width: 300px;
+    border: 3px solid black;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    div {
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 1s ease;
+    }
+    div:hover {
+      background-size: cover;
+      transition: 1s ease;
+      transform: scale(2);
+    }
+    a {
+      text-decoration: none;
+      h1 {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        font-size: 3em;
+        color: green;
+        bottom: 0;
+        left: 0;
+        -webkit-text-stroke: black 2px;
+        transition: 1s ease;
+        padding: 70px 8vw;
+        transform: translateY(50px);
+        line-height: 1em;
+        word-break: break-all;
+      }
+      h1:hover {
+        transition: 1s ease;
+        background-color: #00000080;
+        transform: scale(2, 2) translateY(-10px);
+        color: white;
+      }
+    }
+  }
+  :hover {
+    background-size: 400px, 300px;
+  }
+}
+
+.flower {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  div {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    img {
+      padding: 20px;
+      height: 130px;
+      transition: transform 1s ease;
+    }
+    img:hover {
+      transition: transform 1s ease;
+      transform: scale(1.2) rotateX(180deg);
+    }
+    h1 {
+      margin: auto;
+      text-align: center;
+      font-size: 5em;
+    }
+    button {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 25px;
+      border: 2px black solid;
+      font-family: 'Caveat', cursive;
+      color: red;
+      font-size: 2em;
+    }
+    button:hover {
+      background-color: black;
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  nav {
+    justify-content: center;
+  }
+  .flower_list {
+    grid-template-columns: 1fr;
+  }
+}
